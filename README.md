@@ -2,3 +2,5 @@
 
 ## Description
 Configured webpack files as well as updated database.js files.
+
+Finished updating the rest of the js files.
