@@ -27,4 +27,15 @@ warmStrategyCache({
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
-registerRoute();
+//registerRoute();
+
+self.addEventListener('fetch', function(event) {
+  // console.log('[Service Worker] Fetch', event.request.url);
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () => {
+      pageCache()
+    }));
+  }
+});
+
+
